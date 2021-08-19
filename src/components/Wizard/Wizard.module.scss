@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.WizardContainer {
+  padding-top: $wizard-tab-text-space-bottom;
+
+  .WizardWrapper {
+    position: relative;
+
+    .WizardPercentage,
+    .WizardTabs {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .WizardPercentage {
+      top: #{($wizard-tab-point-out - $wizard-row-height) / 2};
+    }
+
+    .WizardTabs {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

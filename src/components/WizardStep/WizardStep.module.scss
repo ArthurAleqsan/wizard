@@ -1,0 +1,57 @@
+@import "../../styles/variables";
+
+.WizardStepContainer,
+.WizardStepContainerActive {
+  position: relative;
+  margin-left: -#{$wizard-tab-point-out / 2};
+  width: $wizard-tab-point-out;
+  text-align: center;
+
+  .WizardStepTitle {
+    position: absolute;
+    font-size: $wizard-tab-font;
+    font-weight: bold;
+    top: -#{$wizard-tab-text-space-bottom};
+    text-align: center;
+    width: $wizard-tab-text-width;
+    left: #{-1 * ($wizard-tab-text-width - $wizard-tab-point-out) / 2};
+    transition: color $wizard-animation-duration $wizard-animation-style;
+  }
+
+  .WizardStepPoint {
+    position: relative;
+    border-radius: $wizard-tab-point-out;
+    width: $wizard-tab-point-out;
+    height: $wizard-tab-point-out;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background $wizard-animation-duration $wizard-animation-style;
+
+    &::after {
+      content: "";
+      border-radius: $wizard-tab-point-in;
+      width: $wizard-tab-point-in;
+      height: $wizard-tab-point-in;
+      background-color: $site-background;
+    }
+  }
+}
+
+.WizardStepContainer {
+  .WizardStepTitle {
+    color: $wizard-color-inactive !important;
+  }
+  .WizardStepPoint {
+    background-color: $wizard-color-inactive !important;
+  }
+}
+.WizardStepContainerActive {
+  .WizardStepTitle {
+    color: $wizard-color-active !important;
+  }
+  .WizardStepPoint {
+    background-color: $wizard-color-active !important;
+  }
+}

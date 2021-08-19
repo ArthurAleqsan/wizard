@@ -1,0 +1,16 @@
+@use "sass:math";
+@import "../../styles/variables";
+
+.WizardRowContainer {
+    border-radius: $wizard-row-height;
+    height: $wizard-row-height;
+    overflow: hidden;
+    background-color: $wizard-color-inactive;
+    width: calc(100% - #{$wizard-tab-point-out / 2});
+
+    .WizardRowFilled {
+        background:$wizard-color-active;
+        height: $wizard-row-height;
+        transition: width $wizard-animation-duration $wizard-animation-style;
+    }
+}
